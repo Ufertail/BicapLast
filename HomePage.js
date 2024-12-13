@@ -1,10 +1,4 @@
-const events = [
-    { id: 1, name: "Basketball Tournament", category: "Sports", location: "Astana", coords: [51.169392, 71.449074] },
-    { id: 2, name: "Football Match", category: "Sports", location: "Astana", coords: [51.127224, 71.416274] },
-    { id: 3, name: "Psychology Workshop", category: "Psychology", location: "Astana", coords: [51.128763, 71.461044] },
-    { id: 4, name: "Education Fair", category: "Education", location: "Astana", coords: [51.101851, 71.412149] },
-    { id: 5, name: "Music Festival", category: "Entertainment", location: "Astana", coords: [51.150000, 71.400000] },
-];
+let map; // Declare map here so it's accessible throughout the script
 
 window.onload = function() {
     // Play the welcome sound when the page is loaded
@@ -15,6 +9,16 @@ window.onload = function() {
     audio.volume = 0.5; // Set volume to 50% (optional)
 };
 
+// Event data
+const events = [
+    { id: 1, name: "Basketball Tournament", category: "Sports", location: "Astana", coords: [51.169392, 71.449074] },
+    { id: 2, name: "Football Match", category: "Sports", location: "Astana", coords: [51.127224, 71.416274] },
+    { id: 3, name: "Psychology Workshop", category: "Psychology", location: "Astana", coords: [51.128763, 71.461044] },
+    { id: 4, name: "Education Fair", category: "Education", location: "Astana", coords: [51.101851, 71.412149] },
+    { id: 5, name: "Music Festival", category: "Entertainment", location: "Astana", coords: [51.150000, 71.400000] },
+];
+
+// Function to filter events
 const filterEvents = (search = '', category = '') => {
     let filteredEvents = events;
 
@@ -31,6 +35,7 @@ const filterEvents = (search = '', category = '') => {
     return filteredEvents;
 };
 
+// Function to render events on the page
 const renderEvents = (events) => {
     const eventList = document.querySelector('.event-list');
     eventList.innerHTML = '<h3>List of events...</h3>';
@@ -51,16 +56,19 @@ const renderEvents = (events) => {
         eventList.appendChild(eventItem);
     });
 
-    updateMapMarkers(events);
+    updateMapMarkers(events); // Update the map with the event markers
 };
 
+// Function to update map markers
 const updateMapMarkers = (events) => {
+    // Remove existing markers before adding new ones
     map.eachLayer((layer) => {
         if (layer instanceof DG.Marker) {
             map.removeLayer(layer);
         }
     });
 
+    // Add markers for the filtered events
     events.forEach(event => {
         DG.marker(event.coords).addTo(map).bindPopup(event.name);
     });
@@ -69,14 +77,16 @@ const updateMapMarkers = (events) => {
 document.addEventListener('DOMContentLoaded', () => {
     // Wait for 2GIS API to load
     DG.then(() => {
-        const map = DG.map('map', {
+        // Initialize the map
+        map = DG.map('map', {
             center: [51.169392, 71.449074], // Astana coordinates
             zoom: 12, // Initial zoom level
         });
 
-        // Add a marker to the map
+        // Render events initially
         renderEvents(events);
 
+        // Set up search input listener
         const searchInput = document.getElementById('search');
         const categoryButtons = document.querySelectorAll('.category');
 
@@ -85,6 +95,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const filteredEvents = filterEvents(searchQuery, '');
             renderEvents(filteredEvents);
         });
+
+        // Set up category filter listener
         categoryButtons.forEach(button => {
             button.addEventListener('click', () => {
                 const category = button.textContent;
@@ -92,8 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 renderEvents(filteredEvents);
             });
         });
-
-    })
+    });
 });
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -117,5 +128,3 @@ document.addEventListener('DOMContentLoaded', () => {
 
     fetchWeather();
 });
-
-
