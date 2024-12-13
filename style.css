@@ -1,0 +1,230 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f4f4f9;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+/* Header Styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2d65f9;
+    color: white;
+    padding: 10px 20px;
+    height: 60px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-text {
+    font-size: 24px;
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.city {
+    font-size: 16px;
+    opacity: 0.8;
+}
+
+.weather {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+}
+
+.weather-icon {
+    margin-right: 5px;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+}
+
+.user-name {
+    margin-right: 10px;
+}
+
+.user-avatar {
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    border-radius: 50%;
+}
+
+/* Main Layout */
+main {
+    display: flex;
+    flex: 1;
+    height: calc(100vh - 60px);
+}
+
+/* Sidebar Styles */
+.sidebar {
+    width: 300px;
+    background-color: #ffffff;
+    padding: 15px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#search {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+#near-button {
+    padding: 10px;
+    background-color: #2d65f9;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#near-button:hover {
+    background-color: #1a4dc5;
+}
+
+.categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.category {
+    padding: 10px;
+    background-color: #f4f4f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.category:hover {
+    background-color: #e0e0e0;
+}
+
+.event-list {
+    padding: 10px;
+    border-top: 1px solid #ddd;
+}
+
+.event-list h3 {
+    margin: 0;
+    font-size: 16px;
+    opacity: 0.8;
+}
+
+/* Map Container */
+.map-container {
+    width: 100%;
+    height: 100%; /* Adjust the height as needed */
+}
+
+.weather {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.weather-icon img {
+    width: 30px;
+    height: 30px;
+}
+
+.temperature {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* General button styles */
+button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px; /* Space between elements inside button */
+    border: none; /* Remove default border */
+    border-radius: 8px; /* Rounded corners */
+    padding: 10px 16px; /* Internal spacing */
+    font-family: Arial, sans-serif; /* Font style */
+    font-size: 16px; /* Font size */
+    cursor: pointer; /* Pointer cursor */
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+}
+
+/* Add Event Button */
+.addEvent {
+    background-color: #2d65f9;
+    color: white; /* White text */
+    text-transform: uppercase; /* Uppercase text */
+    font-weight: bold; /* Bold font */
+    
+}
+
+.addEvent:hover {
+    background-color: #1a4dc5;
+    transform: scale(1.05); /* Slight zoom on hover */
+}
+
+/* Profile Button */
+.profile {
+    background-color: #2d65f9;
+    color: white; /* White text */
+    padding: 8px 12px; /* Smaller padding */
+    border-radius: 20px; /* Rounded button */
+    font-size: 14px; /* Slightly smaller text */
+    margin: 20px;
+}
+
+.profile:hover {
+    background-color: #1a4dc5;
+    transform: scale(1.05); /* Slight zoom */
+}
+
+/* User Name */
+.user-name {
+    margin-right: 8px; /* Space between name and avatar */
+}
+
+/* User Avatar */
+.user-avatar {
+    width: 32px; /* Width of the avatar */
+    height: 32px; /* Height of the avatar */
+    border-radius: 50%; /* Circular shape */
+    background-color: #ccc; /* Placeholder gray color */
+    background-image: url('https://i0.wp.com/post.medicalnewstoday.com/wp-content/uploads/sites/3/2020/03/GettyImages-1092658864_hero-1024x575.jpg?w=1155&h=1528'); /* Default avatar */
+    background-size: cover; /* Cover the circle */
+    background-position: center; /* Center the image */
+    border: 2px solid white; /* White border for a clean look */
+}
+a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px; /* Space between elements inside button */
+    border: none; /* Remove default border */
+    border-radius: 8px; /* Rounded corners */
+    padding: 10px 16px; /* Internal spacing */
+    font-family: Arial, sans-serif; /* Font style */
+    font-size: 16px; /* Font size */
+    cursor: pointer; /* Pointer cursor */
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+}

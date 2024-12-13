@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Map Platform</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://maps.api.2gis.ru/2.0/loader.js?pkg=full"></script>
+</head>
+<body>
+
+    <audio id="welcome-sound" src="../TheLastest/src/something.mp3" preload="auto"></audio>
+
+    <div id="app">
+    <!-- Header Section -->
+    <header>
+        <div class="logo">
+            <span class="logo-text">GoCity</span>
+            <span class="city">Astana</span>
+        </div>
+        <div class="weather">
+            <span id="weather-icon" class="weather-icon">☀️</span>
+            <span id="temperature" class="temperature">Loading...</span>
+        </div>
+        <div class="user-profile">
+            <button class="addEvent">
+                <span class="add">Add Event</span>
+            </button>
+            <a class="profile" href="Profile.Page.html">
+                <span class="user-name">John Johnson</span>
+                <div class="user-avatar"></div>
+            </a>
+        </div>
+    </header>
+
+
+    <main>
+        <!-- Sidebar Section -->
+        <aside class="sidebar">
+            <input type="text" id="search" placeholder="Find event...">
+            <button id="near-button">Near</button>
+
+            <div class="categories">
+                <button class="category">Sports</button>
+                <button class="category">Education</button>
+                <button class="category">Psychology</button>
+                <button class="category">Entertainment</button>
+                <button class="category">Social</button>
+                <button class="category">Meeting</button>
+            </div>
+
+            
+
+            <div class="event-list">
+                <h3>List of events...</h3>
+            </div>
+        </aside>
+
+        <!-- Map Section -->
+        <section id="map" class="map-container"></section>
+    </main>
+</div>
+
+<script src="HomePage.js"></script>
+
+</body>
+</html>
+
+//zoom and addFriend

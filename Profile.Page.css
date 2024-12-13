@@ -1,0 +1,183 @@
+/* styles.css */
+
+/* Restore the background image */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    display: flex;
+    height: 100vh;
+    color: #333;
+    position: relative;
+  }
+  
+  .background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('city-background.jpg') no-repeat center center/cover;
+    z-index: -1; /* Place behind the content */
+  }
+  
+  .container {
+    display: flex;
+    width: 100%;
+  }
+  
+  .sidebar {
+    width: 200px; /* Reduced width for a narrower sidebar */
+    background-color: #3246d1;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+  }
+  
+  .logo {
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .logo-circle {
+    width: 30px;
+    height: 30px;
+    background-color: #3246d1;
+    border-radius: 50%;
+  }
+  
+  nav ul {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+  }
+  
+  .sidebar-item {
+    text-align: center;
+    padding: 10px 0; /* Reduced padding for smaller spacing */
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .sidebar-item:hover {
+    background-color: #2638a7;
+    transition: background-color 0.3s ease;
+  }
+  
+  .divider {
+    height: 1px;
+    width: 80%;
+    background-color: white;
+    margin: 5px auto; /* Reduced margin for tighter spacing */
+  }
+  
+  .main-content {
+    flex: 1;
+    padding: 40px;
+    margin-right: 40px;
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent background for better readability */
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  form {
+    max-width: 500px;
+    width: 100%;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #3246d1;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+  }
+  
+  input, textarea, select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .categories {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  
+  .category {
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .category.selected {
+    background-color: #3246d1;
+    color: white;
+    border-color: #2638a7;
+  }
+  
+  .category:hover {
+    background-color: #ddd;
+  }
+  
+  .form-actions {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .cancel-btn, .submit-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    color: white;
+  }
+  
+  .cancel-btn {
+    background-color: #e74c3c;
+  }
+  
+  .cancel-btn:hover {
+    background-color: #c0392b;
+  }
+  
+  .submit-btn {
+    background-color: #006400;
+  }
+  
+  .submit-btn:hover {
+    background-color: #2638a7;
+  }
